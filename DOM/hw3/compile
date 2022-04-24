@@ -1,0 +1,5 @@
+bison -d -o y.tab.c test.y	
+gcc -c -g -I.. y.tab.c
+flex -o lex.yy.c test.l
+gcc -c -g -I.. lex.yy.c
+gcc -o test y.tab.o lex.yy.o -ll
